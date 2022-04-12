@@ -1,0 +1,21 @@
+body {
+  margin-left: 0;
+  margin-right: 0;
+  height: 100vh;
+  position: relative;
+}
+svg {
+  position: absolute;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  align-items: center;
+  height: 100vh;
+  width: 80%;
+  margin: 0 auto;
+}
+img {
+  width: 100%;
+  filter: url(#noise);
+}
