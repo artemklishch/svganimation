@@ -1,0 +1,87 @@
+.DispensingBtn {
+  width: 300px;
+  height: 456px;
+  border: 10px solid #fff;
+  border-radius: 70px;
+  overflow: hidden;
+  position: relative;
+  background-color: red;
+  &__bubblesBlock {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 200%;
+    position: absolute;
+    bottom: 0;
+    animation: bubblesMovment 2s linear infinite;
+    &_bubbles {
+      height: 100%;
+      circle {
+        fill: #fff;
+        opacity: 0.4;
+      }
+    }
+  }
+
+  &__liquid {
+    height: 110%;
+    position: absolute;
+    transition-timing-function: linear;
+    top: -110%;
+    &_path {
+      animation: liquidMovement 1s linear infinite;
+    }
+  }
+
+  &__stopBtnBlock {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    &_btn {
+      border: none;
+      outline: none;
+      width: 252px;
+      height: 80px;
+      background: #ff6047;
+      border-radius: 51.5px;
+      cursor: pointer;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 161.1%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+    }
+  }
+}
+
+@keyframes bubblesMovment {
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: -100%;
+  }
+}
+
+@keyframes liquidMovement {
+  0% {
+    d: path("M0,481 C100,456 200,456 300,481 V-456 H0 Z");
+  }
+  25% {
+    d: path("M0,481 C100,506 250,456 300,456 V-456 H0 Z");
+  }
+  50% {
+    d: path("M0,481 C100,506 200,506 300,481 V-456 H0 Z");
+  }
+  75% {
+    d: path("M0,456 C100,456 250,506 300,481 V-456 H0 Z");
+  }
+  100% {
+    d: path("M0,481 C100,456 200,456 300,481 V-456 H0 Z");
+  }
+}

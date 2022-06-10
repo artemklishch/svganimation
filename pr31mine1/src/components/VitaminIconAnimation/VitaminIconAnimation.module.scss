@@ -1,0 +1,79 @@
+.imageBlock {
+  max-width: 92px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  &__intensityValue {
+    background-color: #ff6047;
+    color: #fff;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 18.6667px;
+    position: absolute;
+    top: 0;
+    right: 2px;
+    line-height: 28px;
+    text-align: center;
+    z-index: 2;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+  }
+  &__iconBlock {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    width: 52px;
+    height: 52px;
+    background-color: #024030;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+    &_icon {
+      position: relative;
+      z-index: 1;
+    }
+    &_animation {
+      position: absolute;
+      width: 100%;
+      height: 120%;
+      .animationpath {
+        fill: #ff6047;
+        animation: liquidAnimation 2s linear infinite;
+      }
+    }
+  }
+  &__label {
+    color: #024030;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 110%;
+    margin: 0;
+  }
+}
+
+@keyframes liquidAnimation {
+  0% {
+    d: path("M0,5 Q52,7 52,5 70,100 0,52");
+  }
+  25% {
+    d: path("M0,3 Q52,2 52,5 70,100 0,52");
+  }
+  50% {
+    d: path("M0,1 Q52,-3 52,4 70,100 0,52");
+  }
+  75% {
+    d: path("M0,5 Q52,2 52,-1 70,100 0,52");
+  }
+  100% {
+    d: path("M0,5 Q52,7 52,5 70,100 0,52");
+  }
+}
