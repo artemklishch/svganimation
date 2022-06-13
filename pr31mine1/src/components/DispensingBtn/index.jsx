@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { ReactComponent as Bubbles } from "../../assets/bubbles.svg";
+import { ReactComponent as WaterDrop } from "../../assets/water_drop.svg";
 import classes from "./DispensingBtn.module.scss";
 
 const TRANSITION_DURATION = 8000;
@@ -30,6 +31,10 @@ const DispensingBtn = ({ isDispensing, setIsDespensing }) => {
       <svg className={classes.DispensingBtn__liquid} ref={liquidAnimatioRef}>
         <path className={classes.DispensingBtn__liquid_path} />
       </svg>
+      <WaterDrop className={classes.DispensingBtn__dropicon} />
+      <h3 className={classes.DispensingBtn__title}>
+        Lemon mint - breezer
+      </h3>
       <div className={classes.DispensingBtn__stopBtnBlock}>
         <button className={classes.DispensingBtn__stopBtnBlock_btn}>
           Stop

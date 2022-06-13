@@ -29,9 +29,25 @@
     transition-timing-function: linear !important;
     top: -110%;
     &_path {
-      fill: grey !important;
+      fill: #0d8f68 !important;
       animation: liquidMovement 1s linear infinite;
     }
+  }
+
+  &__dropicon {
+    position: absolute;
+    top: 0;
+  }
+  &__title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 94.8%;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0 20px;
+    color: #ffffff;
+    margin-top: calc(100% / 2 + 100px);
   }
 
   &__stopBtnBlock {
