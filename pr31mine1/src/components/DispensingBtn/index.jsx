@@ -3,25 +3,26 @@ import { ReactComponent as Bubbles } from "../../assets/bubbles.svg";
 import classes from "./DispensingBtn.module.scss";
 
 const TRANSITION_DURATION = 8000;
-const FILL_BACGROUND = "grey";
+const LIQUID_BACGROUND = "red";
 
 const DispensingBtn = ({ isDispensing, setIsDespensing }) => {
   const liquidAnimatioRef = useRef();
   useEffect(() => {
     if (isDispensing) {
       liquidAnimatioRef.current.style.transition = TRANSITION_DURATION + "ms";
-      liquidAnimatioRef.current.children[0].style.fill = FILL_BACGROUND;
       liquidAnimatioRef.current.style.top = "0";
       setTimeout(() => {
-        liquidAnimatioRef.current.style.transition = '0s';
-        liquidAnimatioRef.current.children[0].style.fill = 'none';
+        liquidAnimatioRef.current.style.transition = "0s";
         liquidAnimatioRef.current.style.top = "-110%";
         setIsDespensing(false);
       }, TRANSITION_DURATION);
     }
-  }, [isDispensing]);
+  }, [isDispensing, setIsDespensing]);
   return (
-    <div className={classes.DispensingBtn}>
+    <div
+      className={classes.DispensingBtn}
+      style={{ backgroundColor: LIQUID_BACGROUND }}
+    >
       <div className={classes.DispensingBtn__bubblesBlock}>
         <Bubbles className={classes.DispensingBtn__bubblesBlock_bubbles} />
         <Bubbles className={classes.DispensingBtn__bubblesBlock_bubbles} />

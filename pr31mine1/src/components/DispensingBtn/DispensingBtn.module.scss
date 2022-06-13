@@ -5,7 +5,7 @@
   border-radius: 70px;
   overflow: hidden;
   position: relative;
-  background-color: red;
+  transition-timing-function: linear;
   &__bubblesBlock {
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@
     height: 200%;
     position: absolute;
     bottom: 0;
-    animation: bubblesMovment 2s linear infinite;
+    animation: bubblesMovment 1s linear infinite;
     &_bubbles {
       height: 100%;
       circle {
@@ -26,9 +26,10 @@
   &__liquid {
     height: 110%;
     position: absolute;
-    transition-timing-function: linear;
+    transition-timing-function: linear !important;
     top: -110%;
     &_path {
+      fill: grey !important;
       animation: liquidMovement 1s linear infinite;
     }
   }
